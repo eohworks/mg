@@ -16,7 +16,7 @@
 
 .site-header__logo {
   height: 36px;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, height 0.3s ease;
 }
 
 .hero {
