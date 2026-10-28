@@ -42,7 +42,7 @@
   width: 254px;
   height: 254px;
   transform: translate(-50%, -50%) rotate(0deg);
-  animation: wheel-spin 4s linear infinite;
+  animation: wheel-spin 8s linear infinite;
   animation-play-state: paused;
 }
 
