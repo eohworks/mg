@@ -5,7 +5,7 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduceMotion) return;
 
-  var degreesPerMs = 360 / 8000;
+  var degreesPerMs = (360 / 8000) * 0.75;
   var velocity = 0;
   var targetVelocity = 0;
   var angle = 0;
