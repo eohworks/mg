@@ -42,6 +42,11 @@
         if (!button.dataset.asset) return;
         targetImg.src = button.dataset.asset;
         targetImg.dataset[datasetKey] = button.dataset[datasetKey + "Option"];
+        if (button.dataset.height) {
+          targetImg.style.height = button.dataset.height + "px";
+        } else {
+          targetImg.style.height = "";
+        }
         setActive(buttons, button);
       });
     });
