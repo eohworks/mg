@@ -56,13 +56,23 @@
     requestAnimationFrame(frame);
   }
 
-  wheel.addEventListener("mouseenter", function () {
-    targetVelocity = degreesPerMs;
-  });
+  var isTouch = window.matchMedia("(hover: none)").matches;
 
-  wheel.addEventListener("mouseleave", function () {
-    targetVelocity = 0;
-  });
+  if (isTouch) {
+    var tapSpinning = false;
+    wheel.addEventListener("click", function () {
+      tapSpinning = !tapSpinning;
+      targetVelocity = tapSpinning ? degreesPerMs : 0;
+    });
+  } else {
+    wheel.addEventListener("mouseenter", function () {
+      targetVelocity = degreesPerMs;
+    });
+
+    wheel.addEventListener("mouseleave", function () {
+      targetVelocity = 0;
+    });
+  }
 
   requestAnimationFrame(introFrame);
 })();
