@@ -1,9 +1,9 @@
 .menu {
   position: absolute;
-  top: var(--space-6);
+  top: 0;
   left: 0;
   width: 427px;
-  height: calc(100% - var(--space-6));
+  height: 100%;
   background: #fff;
   overflow-y: auto;
   padding-top: var(--space-24);
