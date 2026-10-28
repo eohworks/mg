@@ -39,9 +39,24 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 254px;
   height: 254px;
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: wheel-spin 4s linear infinite;
+  animation-play-state: paused;
+}
+
+.hero__wheel:hover {
+  animation-play-state: running;
+}
+
+@keyframes wheel-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 @media (max-width: 767px) {
