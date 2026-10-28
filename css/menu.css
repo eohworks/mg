@@ -70,8 +70,14 @@
   height: 12px;
 }
 
-.menu__row--active {
+.menu__row[data-asset] {
   color: #000;
+  cursor: pointer;
+}
+
+.menu__row:not([data-asset]) {
+  color: #a0a0a0;
+  cursor: default;
 }
 
 .menu__row-label {
