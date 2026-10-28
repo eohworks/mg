@@ -68,3 +68,7 @@
   width: 12px;
   height: 12px;
 }
+
+.menu__row--active {
+  font-weight: 700;
+}

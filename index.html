@@ -15,7 +15,7 @@
 <body>
   <header class="site-header">
     <img class="site-header__icon site-header__icon--menu" src="assets/menu-icon.svg" alt="Menu">
-    <img class="site-header__logo" src="assets/logo.svg" alt="">
+    <img class="site-header__logo" id="wordmark" src="assets/logo.svg" alt="" data-wordmark="gothic-v1">
     <img class="site-header__icon" src="assets/bag-icon.svg" alt="">
   </header>
   <section class="hero">
@@ -25,31 +25,31 @@
     <div class="hero__image">
       <img src="assets/chair.png" alt="">
     </div>
-    <img class="hero__wheel" src="assets/wheel-icon.svg" alt="">
+    <img class="hero__wheel" id="wheel" src="assets/wheel-icon.svg" alt="" data-wheel="flame">
     <nav class="menu" id="menu" hidden>
       <div class="menu__section">
         <p class="menu__heading">WORDMARK</p>
         <div class="menu__group">
           <p class="menu__group-label">GOTHIC</p>
-          <button class="menu__row" type="button">v. 1<img src="assets/arrow-right.svg" alt=""></button>
-          <button class="menu__row" type="button">v. 2<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row menu__row--active" type="button" data-wordmark-option="gothic-v1" data-asset="assets/logo.svg">v. 1<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="gothic-v2">v. 2<img src="assets/arrow-right.svg" alt=""></button>
         </div>
         <div class="menu__group">
           <p class="menu__group-label">MODERN</p>
-          <button class="menu__row" type="button">v. 1<img src="assets/arrow-right.svg" alt=""></button>
-          <button class="menu__row" type="button">v. 2<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="modern-v1">v. 1<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="modern-v2">v. 2<img src="assets/arrow-right.svg" alt=""></button>
         </div>
         <div class="menu__group">
           <p class="menu__group-label">CLASSIC</p>
-          <button class="menu__row" type="button">v. 1<img src="assets/arrow-right.svg" alt=""></button>
-          <button class="menu__row" type="button">v. 2<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="classic-v1">v. 1<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="classic-v2">v. 2<img src="assets/arrow-right.svg" alt=""></button>
         </div>
       </div>
       <div class="menu__section">
         <p class="menu__heading">WHEEL</p>
         <div class="menu__group">
-          <button class="menu__row" type="button">Flame<img src="assets/arrow-right.svg" alt=""></button>
-          <button class="menu__row" type="button">Weave<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row menu__row--active" type="button" data-wheel-option="flame" data-asset="assets/wheel-icon.svg">Flame<img src="assets/arrow-right.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wheel-option="weave">Weave<img src="assets/arrow-right.svg" alt=""></button>
         </div>
       </div>
     </nav>
