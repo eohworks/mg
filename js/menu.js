@@ -35,23 +35,41 @@
     });
   }
 
-  function wire(selector, targetImg, datasetKey) {
+  function wire(selector, targetImg, datasetKey, fade) {
     var buttons = Array.prototype.slice.call(menu.querySelectorAll(selector));
     buttons.forEach(function (button) {
       button.addEventListener("click", function () {
         if (!button.dataset.asset) return;
-        targetImg.src = button.dataset.asset;
-        targetImg.dataset[datasetKey] = button.dataset[datasetKey + "Option"];
-        if (button.dataset.height) {
-          targetImg.style.height = button.dataset.height + "px";
-        } else {
-          targetImg.style.height = "";
+
+        function applyChange() {
+          targetImg.src = button.dataset.asset;
+          targetImg.dataset[datasetKey] = button.dataset[datasetKey + "Option"];
+          if (button.dataset.height) {
+            targetImg.style.height = button.dataset.height + "px";
+          } else {
+            targetImg.style.height = "";
+          }
         }
+
+        if (fade) {
+          targetImg.style.opacity = 0;
+          targetImg.addEventListener(
+            "load",
+            function () {
+              targetImg.style.opacity = 1;
+            },
+            { once: true }
+          );
+          applyChange();
+        } else {
+          applyChange();
+        }
+
         setActive(buttons, button);
       });
     });
   }
 
-  wire("[data-wordmark-option]", wordmark, "wordmark");
-  wire("[data-wheel-option]", wheel, "wheel");
+  wire("[data-wordmark-option]", wordmark, "wordmark", true);
+  wire("[data-wheel-option]", wheel, "wheel", false);
 })();
