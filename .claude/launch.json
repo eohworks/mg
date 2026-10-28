@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mg-www",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "echo hello && pwd && ls"],
+      "port": 4173
+    }
+  ]
+}
