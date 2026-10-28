@@ -10,6 +10,10 @@
   height: 18px;
 }
 
+.site-header__icon--menu {
+  cursor: pointer;
+}
+
 .site-header__logo {
   height: 36px;
 }
