@@ -17,24 +17,28 @@
   var lastTime = null;
   var easing = 0.003;
 
-  function easeInOutCubic(t) {
-    return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  }
-
   var introDuration = 1000;
   var introStart = null;
+  var introLastTime = null;
 
   function introFrame(time) {
-    if (introStart === null) introStart = time;
-    var t = Math.min((time - introStart) / introDuration, 1);
-    angle = easeInOutCubic(t) * 360;
+    if (introStart === null) {
+      introStart = time;
+      introLastTime = time;
+    }
+    var elapsed = time - introStart;
+    var dt = time - introLastTime;
+    introLastTime = time;
+
+    var t = Math.min(elapsed / introDuration, 1);
+    var introVelocity = degreesPerMs * Math.sin(Math.PI * t);
+    angle = (angle + introVelocity * dt) % 360;
 
     wheel.style.transform = "translate(-50%, -50%) rotate(" + angle + "deg)";
 
     if (t < 1) {
       requestAnimationFrame(introFrame);
     } else {
-      angle = 0;
       requestAnimationFrame(frame);
     }
   }
