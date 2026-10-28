@@ -72,3 +72,14 @@
 .menu__row--active {
   font-weight: 700;
 }
+
+.menu__row-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+img.menu__row-view {
+  width: 16px;
+  height: 16px;
+}

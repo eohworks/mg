@@ -10,25 +10,43 @@
   var wordmark = document.getElementById("wordmark");
   var wheel = document.getElementById("wheel");
 
-  menu.querySelectorAll("[data-wordmark-option]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      if (!button.dataset.asset) return;
-      wordmark.src = button.dataset.asset;
-      wordmark.dataset.wordmark = button.dataset.wordmarkOption;
-      menu.querySelectorAll("[data-wordmark-option]").forEach(function (b) {
-        b.classList.toggle("menu__row--active", b === button);
-      });
-    });
-  });
+  function setActive(buttons, activeButton) {
+    buttons.forEach(function (button) {
+      var isActive = button === activeButton;
+      button.classList.toggle("menu__row--active", isActive);
 
-  menu.querySelectorAll("[data-wheel-option]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      if (!button.dataset.asset) return;
-      wheel.src = button.dataset.asset;
-      wheel.dataset.wheel = button.dataset.wheelOption;
-      menu.querySelectorAll("[data-wheel-option]").forEach(function (b) {
-        b.classList.toggle("menu__row--active", b === button);
+      var arrow = button.querySelector('img[src*="arrow-right"]');
+      var label = button.querySelector(".menu__row-label");
+
+      if (isActive && !label) {
+        label = document.createElement("span");
+        label.className = "menu__row-label";
+        label.append(button.firstChild);
+        var view = document.createElement("img");
+        view.className = "menu__row-view";
+        view.src = "assets/view-icon.svg";
+        view.alt = "";
+        label.append(view);
+        button.insertBefore(label, arrow);
+      } else if (!isActive && label) {
+        button.insertBefore(label.firstChild, arrow);
+        label.remove();
+      }
+    });
+  }
+
+  function wire(selector, targetImg, datasetKey) {
+    var buttons = Array.prototype.slice.call(menu.querySelectorAll(selector));
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        if (!button.dataset.asset) return;
+        targetImg.src = button.dataset.asset;
+        targetImg.dataset[datasetKey] = button.dataset[datasetKey + "Option"];
+        setActive(buttons, button);
       });
     });
-  });
+  }
+
+  wire("[data-wordmark-option]", wordmark, "wordmark");
+  wire("[data-wheel-option]", wheel, "wheel");
 })();
