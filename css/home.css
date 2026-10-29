@@ -46,6 +46,13 @@
   background: #ebebeb;
 }
 
+.product-card-sm__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .product-card-sm__info {
   display: flex;
   flex-direction: column;
