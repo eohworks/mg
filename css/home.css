@@ -160,10 +160,6 @@
     padding: 0 var(--space-24);
   }
 
-  .ad-grid__mark {
-    display: none;
-  }
-
   .ad-grid {
     margin-top: calc(var(--space-36) * 2);
     padding: 0 var(--space-24);
