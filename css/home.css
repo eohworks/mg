@@ -6,13 +6,22 @@
 
 .quote p {
   margin: 0;
+  font-weight: 600;
   font-style: italic;
   font-size: 30px;
   line-height: 30px;
 }
 
+.quote__attribution {
+  margin: 0;
+  margin-top: var(--space-12);
+  font-weight: 600;
+  font-size: var(--font-size-12);
+  letter-spacing: 1.2px;
+}
+
 .ad-grid {
-  margin-top: calc(var(--space-36) * 2);
+  margin-top: 45px;
   padding: 0 var(--space-36);
   display: flex;
   gap: var(--space-18);
@@ -146,7 +155,7 @@
   }
 
   .ad-grid {
-    margin-top: calc(var(--space-36) + var(--space-30));
+    margin-top: calc(var(--space-36) * 2);
     padding: 0 var(--space-24);
     scroll-padding: 0 var(--space-24);
     gap: 0;
