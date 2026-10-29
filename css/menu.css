@@ -82,7 +82,7 @@
   height: 16px;
 }
 
-.menu__row--toggle {
+.menu__row.menu__row--toggle {
   color: #000;
   cursor: pointer;
 }
