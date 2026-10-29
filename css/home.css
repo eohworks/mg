@@ -21,10 +21,21 @@
 }
 
 .ad-grid {
+  position: relative;
   margin-top: 45px;
   padding: 0 var(--space-36);
   display: flex;
   gap: var(--space-18);
+}
+
+.ad-grid__mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 256px;
+  height: 139px;
+  pointer-events: none;
 }
 
 .ad {
@@ -147,6 +158,10 @@
   .quote {
     margin-top: var(--space-36);
     padding: 0 var(--space-24);
+  }
+
+  .ad-grid__mark {
+    display: none;
   }
 
   .ad-grid {
