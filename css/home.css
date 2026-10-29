@@ -20,9 +20,12 @@
   letter-spacing: 1.2px;
 }
 
-.ad-grid {
+.ad-grid-wrap {
   position: relative;
   margin-top: 45px;
+}
+
+.ad-grid {
   padding: 0 var(--space-36);
   display: flex;
   gap: var(--space-18);
@@ -160,8 +163,11 @@
     padding: 0 var(--space-24);
   }
 
-  .ad-grid {
+  .ad-grid-wrap {
     margin-top: calc(var(--space-36) * 2);
+  }
+
+  .ad-grid {
     padding: 0 var(--space-24);
     scroll-padding: 0 var(--space-24);
     gap: 0;
