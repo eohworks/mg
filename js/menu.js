@@ -5,6 +5,8 @@
 
   toggle.addEventListener("click", function () {
     menu.hidden = !menu.hidden;
+    toggle.src = menu.hidden ? "assets/menu-icon.svg" : "assets/close-large.svg";
+    toggle.alt = menu.hidden ? "Menu" : "Close";
   });
 
   var wordmark = document.getElementById("wordmark");
