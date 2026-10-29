@@ -1,0 +1,119 @@
+.quote {
+  margin-top: calc(var(--space-36) * 2);
+  padding: 0 var(--space-36);
+  text-align: center;
+}
+
+.quote p {
+  margin: 0;
+  font-style: italic;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.ad-grid {
+  margin-top: calc(var(--space-36) * 2);
+  padding: 0 var(--space-36);
+  display: flex;
+  gap: var(--space-18);
+}
+
+.ad {
+  flex: 1 0 0;
+  height: 512px;
+  background: #ebebeb;
+}
+
+.product-grid {
+  margin-top: var(--space-36);
+  padding: 0 var(--space-36);
+  display: flex;
+  gap: var(--space-18);
+}
+
+.product-card-sm {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 269px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.product-card-sm__image {
+  flex: 1 0 0;
+  min-height: 0;
+  background: #ebebeb;
+}
+
+.product-card-sm__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.product-card-sm__name,
+.product-card-sm__price {
+  margin: 0;
+  font-size: var(--font-size-12);
+}
+
+.site-footer {
+  margin-top: 325px;
+  padding: 0 var(--space-36) var(--space-30);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.site-footer__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-36);
+}
+
+.site-footer__links p {
+  margin: 0;
+  font-size: var(--font-size-12);
+  white-space: nowrap;
+}
+
+.site-footer__subscribe {
+  display: flex;
+  align-items: center;
+  gap: var(--space-18);
+}
+
+.site-footer__subscribe-label,
+.site-footer__subscribe-copy {
+  margin: 0;
+  font-size: var(--font-size-12);
+  white-space: nowrap;
+}
+
+.site-footer__email {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 254px;
+  height: 24px;
+  border-bottom: 0.5px solid #000;
+}
+
+.site-footer__email input {
+  border: none;
+  outline: none;
+  padding: 0;
+  font: inherit;
+  font-size: var(--font-size-12);
+  color: #a0a0a0;
+  width: 100%;
+}
+
+.site-footer__email-submit {
+  width: 6.5px;
+  height: 6.5px;
+  transform: rotate(-45deg);
+  flex-shrink: 0;
+}
