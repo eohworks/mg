@@ -159,7 +159,7 @@
 
 @media (max-width: 767px) {
   .quote {
-    margin-top: var(--space-36);
+    margin-top: calc(var(--space-36) * 2);
     padding: 0 var(--space-24);
   }
 
