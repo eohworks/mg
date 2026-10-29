@@ -66,11 +66,6 @@
   cursor: pointer;
 }
 
-.menu__row img {
-  width: 12px;
-  height: 12px;
-}
-
 .menu__row[data-asset] {
   color: #000;
   cursor: pointer;
@@ -81,15 +76,15 @@
   cursor: default;
 }
 
-.menu__row-label {
-  display: flex;
-  align-items: center;
-  gap: var(--space-6);
-}
-
-img.menu__row-view {
+.menu__row-view,
+.menu__row-toggle-icon {
   width: 16px;
   height: 16px;
+}
+
+.menu__row--toggle {
+  color: #000;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

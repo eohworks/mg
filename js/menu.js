@@ -18,22 +18,16 @@
       var isActive = button === activeButton;
       button.classList.toggle("menu__row--active", isActive);
 
-      var arrow = button.querySelector('img[src*="arrow-right"]');
-      var label = button.querySelector(".menu__row-label");
+      var view = button.querySelector(".menu__row-view");
 
-      if (isActive && !label) {
-        label = document.createElement("span");
-        label.className = "menu__row-label";
-        label.append(button.firstChild);
-        var view = document.createElement("img");
+      if (isActive && !view) {
+        view = document.createElement("img");
         view.className = "menu__row-view";
         view.src = "assets/view-icon.svg";
         view.alt = "";
-        label.append(view);
-        button.insertBefore(label, arrow);
-      } else if (!isActive && label) {
-        button.insertBefore(label.firstChild, arrow);
-        label.remove();
+        button.append(view);
+      } else if (!isActive && view) {
+        view.remove();
       }
     });
   }
@@ -78,4 +72,16 @@
 
   wire("[data-wordmark-option]", wordmark, "wordmark", true);
   wire("[data-wheel-option]", wheel, "wheel", false);
+
+  var hexagonToggle = document.getElementById("hexagonToggle");
+  var hexagonToggleIcon = document.getElementById("hexagonToggleIcon");
+  var hexagon = document.querySelector(".hero__hexagon");
+
+  if (hexagonToggle && hexagonToggleIcon && hexagon) {
+    hexagonToggle.addEventListener("click", function () {
+      var isVisible = hexagon.style.display !== "none";
+      hexagon.style.display = isVisible ? "none" : "";
+      hexagonToggleIcon.src = isVisible ? "assets/toggle-off.svg" : "assets/toggle-on.svg";
+    });
+  }
 })();
