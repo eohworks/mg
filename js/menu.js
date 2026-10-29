@@ -3,11 +3,25 @@
   var menu = document.getElementById("menu");
   if (!toggle || !menu) return;
 
+  function closeMenu() {
+    menu.hidden = true;
+    toggle.src = "assets/menu-icon.svg";
+    toggle.alt = "Menu";
+  }
+
   toggle.addEventListener("click", function () {
     menu.hidden = !menu.hidden;
     toggle.src = menu.hidden ? "assets/menu-icon.svg" : "assets/close-large.svg";
     toggle.alt = menu.hidden ? "Menu" : "Close";
   });
+
+  if (window.matchMedia("(hover: hover)").matches) {
+    document.addEventListener("click", function (event) {
+      if (menu.hidden) return;
+      if (menu.contains(event.target) || toggle.contains(event.target)) return;
+      closeMenu();
+    });
+  }
 
   var wordmark = document.getElementById("wordmark");
   var wheel = document.getElementById("wheel");
