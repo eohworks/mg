@@ -40,6 +40,16 @@
   display: block;
 }
 
+.hero__hexagon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 254px;
+  aspect-ratio: 253 / 293;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
 .hero__wheel {
   position: absolute;
   top: 50%;
@@ -62,6 +72,10 @@
 
   .hero {
     flex-direction: column;
+  }
+
+  .hero__hexagon {
+    width: 234px;
   }
 
   .hero__wheel {
