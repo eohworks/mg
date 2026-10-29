@@ -9,6 +9,7 @@
 
   var wordmark = document.getElementById("wordmark");
   var wheel = document.getElementById("wheel");
+  var adGridMark = document.getElementById("adGridMark");
 
   function setActive(buttons, activeButton) {
     buttons.forEach(function (button) {
@@ -48,6 +49,9 @@
             targetImg.style.height = button.dataset.height + "px";
           } else {
             targetImg.style.height = "";
+          }
+          if (adGridMark && button.dataset.markAsset) {
+            adGridMark.src = button.dataset.markAsset;
           }
         }
 
