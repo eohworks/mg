@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 427px;
   height: 100%;
-  background: #fff;
+  background: var(--color-bg);
   overflow-y: auto;
   padding-top: var(--space-24);
   display: flex;
@@ -44,10 +44,10 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  color: #c6c6c6;
+  color: var(--color-label);
   font-size: var(--font-size-0);
   letter-spacing: 1.2px;
-  border-bottom: 0.5px solid #c6c6c6;
+  border-bottom: 0.5px solid var(--color-label);
 }
 
 .menu__row {
@@ -57,22 +57,22 @@
   justify-content: space-between;
   width: 100%;
   border: none;
-  border-bottom: 0.5px solid #a0a0a0;
+  border-bottom: 0.5px solid var(--color-text-muted);
   background: none;
   padding: 0;
   font: inherit;
   font-size: var(--font-size-0);
-  color: #a0a0a0;
+  color: var(--color-text-muted);
   cursor: pointer;
 }
 
 .menu__row[data-asset] {
-  color: #000;
+  color: var(--color-text);
   cursor: pointer;
 }
 
 .menu__row:not([data-asset]) {
-  color: #a0a0a0;
+  color: var(--color-text-muted);
   cursor: default;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .menu__row.menu__row--toggle {
-  color: #000;
+  color: var(--color-text);
   cursor: pointer;
 }
 

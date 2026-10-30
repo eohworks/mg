@@ -2,6 +2,9 @@ body {
   margin: 0;
   padding-top: var(--header-height, 0px);
   font-family: "adobe-jenson-pro", serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 :root {
@@ -11,4 +14,37 @@ body {
   --space-24: 24px;
   --space-30: 30px;
   --space-36: 36px;
+
+  /* Neutral greyscale, 6 steps */
+  --grey-0: #000000;
+  --grey-1: #a0a0a0;
+  --grey-2: #c6c6c6;
+  --grey-3: #d9d9d9;
+  --grey-4: #ebebeb;
+  --grey-5: #ffffff;
+
+  /* Theme — light (default) */
+  --color-bg: var(--grey-5);
+  --color-text: var(--grey-0);
+  --color-text-muted: var(--grey-1);
+  --color-label: var(--grey-2);
+  --color-dot-inactive: var(--grey-3);
+  --color-placeholder: var(--grey-4);
+}
+
+/* Theme — dark: every step mirrored (n -> 5-n) across the same 6-step scale */
+html[data-theme="dark"] {
+  --color-bg: var(--grey-0);
+  --color-text: var(--grey-5);
+  --color-text-muted: var(--grey-4);
+  --color-label: var(--grey-3);
+  --color-dot-inactive: var(--grey-2);
+  --color-placeholder: var(--grey-1);
+}
+
+html[data-theme="dark"] .site-header__icon,
+html[data-theme="dark"] .menu__row-view,
+html[data-theme="dark"] .menu__row-toggle-icon,
+html[data-theme="dark"] .site-footer__email-submit {
+  filter: invert(1);
 }
