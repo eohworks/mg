@@ -22,7 +22,8 @@
   track.addEventListener("scroll", function () {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(function () {
-      var index = Math.round(track.scrollLeft / track.clientWidth);
+      var slideWidth = slides[0].getBoundingClientRect().width;
+      var index = Math.round(track.scrollLeft / slideWidth);
       setActive(index);
     }, 100);
   });
