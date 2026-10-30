@@ -28,7 +28,15 @@
 .ad-grid {
   padding: 0 var(--space-36);
   display: flex;
-  gap: var(--space-18);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 var(--space-36);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.ad-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .ad-grid__mark {
@@ -42,13 +50,10 @@
 }
 
 .ad {
-  flex: 1 0 0;
+  flex: 0 0 calc(100% / 3);
   aspect-ratio: 4 / 5;
   background: #ebebeb;
-}
-
-.ad--mobile-only {
-  display: none;
+  scroll-snap-align: start;
 }
 
 .ad img {
@@ -158,7 +163,25 @@
 }
 
 .ad-nav {
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-12);
+  margin-top: var(--space-24);
+}
+
+.ad-nav__dot {
+  width: 6px;
+  height: 6px;
+  transform: rotate(-30deg);
+  background: #d9d9d9;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ad-nav__dot--active {
+  background: #000;
 }
 
 @media (max-width: 767px) {
@@ -174,46 +197,10 @@
   .ad-grid {
     padding: 0 var(--space-24);
     scroll-padding: 0 var(--space-24);
-    gap: 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .ad-grid::-webkit-scrollbar {
-    display: none;
   }
 
   .ad {
     flex: 0 0 100%;
-    scroll-snap-align: start;
-  }
-
-  .ad--mobile-only {
-    display: block;
-  }
-
-  .ad-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: var(--space-12);
-    margin-top: var(--space-24);
-  }
-
-  .ad-nav__dot {
-    width: 6px;
-    height: 6px;
-    transform: rotate(-30deg);
-    background: #d9d9d9;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
-
-  .ad-nav__dot--active {
-    background: #000;
   }
 
   .product-grid {
