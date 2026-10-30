@@ -1,5 +1,10 @@
+/*
+ * Type scale
+ * Ratio r = 2/√3 ≈ 1.1547 — a regular hexagon's vertex-to-vertex : flat-to-flat diagonal ratio
+ * scale(n) = base × r^n
+ * base = 0.875rem (14px @ 16px root)
+ */
 :root {
-  --font-size-12: 12px;
-  --font-size-18: 18px;
-  --font-size-24: 24px;
+  --font-size-0: 0.875rem;  /* 14px — base */
+  --font-size-3: 1.3469rem; /* ~21.55px — base × r³ */
 }
