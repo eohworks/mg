@@ -38,6 +38,10 @@
   flex-direction: column;
 }
 
+.menu__group[hidden] {
+  display: none;
+}
+
 .menu__group-label {
   margin: 0;
   height: 30px;
