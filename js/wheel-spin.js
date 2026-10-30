@@ -17,30 +17,35 @@
   var lastTime = null;
   var easing = 0.003;
 
-  var introDuration = 1000;
-  var introStart = null;
-  var introLastTime = null;
+  var pulseDuration = 1000;
 
-  function introFrame(time) {
-    if (introStart === null) {
-      introStart = time;
-      introLastTime = time;
+  function pulse(onComplete) {
+    var start = null;
+    var last = null;
+
+    function step(time) {
+      if (start === null) {
+        start = time;
+        last = time;
+      }
+      var elapsed = time - start;
+      var dt = time - last;
+      last = time;
+
+      var t = Math.min(elapsed / pulseDuration, 1);
+      var pulseVelocity = degreesPerMs * Math.sin(Math.PI * t);
+      angle = (angle + pulseVelocity * dt) % 360;
+
+      wheel.style.transform = "translate(-50%, -50%) rotate(" + angle + "deg)";
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else if (onComplete) {
+        onComplete();
+      }
     }
-    var elapsed = time - introStart;
-    var dt = time - introLastTime;
-    introLastTime = time;
 
-    var t = Math.min(elapsed / introDuration, 1);
-    var introVelocity = degreesPerMs * Math.sin(Math.PI * t);
-    angle = (angle + introVelocity * dt) % 360;
-
-    wheel.style.transform = "translate(-50%, -50%) rotate(" + angle + "deg)";
-
-    if (t < 1) {
-      requestAnimationFrame(introFrame);
-    } else {
-      requestAnimationFrame(frame);
-    }
+    requestAnimationFrame(step);
   }
 
   function frame(time) {
@@ -59,10 +64,8 @@
   var isTouch = window.matchMedia("(hover: none)").matches;
 
   if (isTouch) {
-    var tapSpinning = false;
-    wheel.addEventListener("click", function () {
-      tapSpinning = !tapSpinning;
-      targetVelocity = tapSpinning ? degreesPerMs : 0;
+    pulse(function () {
+      setInterval(pulse, 4000);
     });
   } else {
     wheel.addEventListener("mouseenter", function () {
@@ -72,7 +75,9 @@
     wheel.addEventListener("mouseleave", function () {
       targetVelocity = 0;
     });
-  }
 
-  requestAnimationFrame(introFrame);
+    pulse(function () {
+      requestAnimationFrame(frame);
+    });
+  }
 })();
