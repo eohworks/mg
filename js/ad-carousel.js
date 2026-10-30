@@ -12,9 +12,13 @@
     });
   }
 
+  function centerSlide(index, behavior) {
+    slides[index].scrollIntoView({ behavior: behavior, inline: "center", block: "nearest" });
+  }
+
   dots.forEach(function (dot, i) {
     dot.addEventListener("click", function () {
-      slides[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      centerSlide(i, "smooth");
     });
   });
 
@@ -43,5 +47,10 @@
     scrollTimeout = setTimeout(function () {
       setActive(closestToCenter());
     }, 100);
+  });
+
+  requestAnimationFrame(function () {
+    centerSlide(1, "auto");
+    setActive(1);
   });
 })();
