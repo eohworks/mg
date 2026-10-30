@@ -30,7 +30,6 @@
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scroll-padding: 0 var(--space-36);
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
@@ -53,7 +52,12 @@
   flex: 0 0 calc(100% / 3);
   aspect-ratio: 4 / 5;
   background: #ebebeb;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
+}
+
+.ad-spacer {
+  flex: 0 0 calc(100% / 3);
+  background: #fff;
 }
 
 .ad img {
@@ -197,6 +201,10 @@
   .ad-grid {
     padding: 0 var(--space-24);
     scroll-padding: 0 var(--space-24);
+  }
+
+  .ad-spacer {
+    display: none;
   }
 
   .ad {

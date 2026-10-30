@@ -14,17 +14,34 @@
 
   dots.forEach(function (dot, i) {
     dot.addEventListener("click", function () {
-      slides[i].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+      slides[i].scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     });
   });
+
+  function closestToCenter() {
+    var trackRect = track.getBoundingClientRect();
+    var trackCenter = trackRect.left + trackRect.width / 2;
+    var closestIndex = 0;
+    var closestDist = Infinity;
+
+    slides.forEach(function (slide, i) {
+      var r = slide.getBoundingClientRect();
+      var slideCenter = r.left + r.width / 2;
+      var dist = Math.abs(slideCenter - trackCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIndex = i;
+      }
+    });
+
+    return closestIndex;
+  }
 
   var scrollTimeout;
   track.addEventListener("scroll", function () {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(function () {
-      var slideWidth = slides[0].getBoundingClientRect().width;
-      var index = Math.round(track.scrollLeft / slideWidth);
-      setActive(index);
+      setActive(closestToCenter());
     }, 100);
   });
 })();
