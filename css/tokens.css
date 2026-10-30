@@ -38,7 +38,7 @@ html[data-theme="dark"] {
   --color-text: var(--grey-5);
   --color-text-muted: var(--grey-4);
   --color-label: var(--grey-3);
-  --color-dot-inactive: var(--grey-2);
+  --color-dot-inactive: var(--grey-1);
   --color-placeholder: var(--grey-1);
 }
 
