@@ -5,13 +5,13 @@
 
   function closeMenu() {
     menu.hidden = true;
-    toggle.src = "assets/menu-icon.svg";
+    toggle.src = "assets/edit.svg";
     toggle.alt = "Menu";
   }
 
   toggle.addEventListener("click", function () {
     menu.hidden = !menu.hidden;
-    toggle.src = menu.hidden ? "assets/menu-icon.svg" : "assets/close-large.svg";
+    toggle.src = menu.hidden ? "assets/edit.svg" : "assets/close-large.svg";
     toggle.alt = menu.hidden ? "Menu" : "Close";
   });
 
