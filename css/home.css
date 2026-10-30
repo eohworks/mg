@@ -47,6 +47,10 @@
   background: #ebebeb;
 }
 
+.ad--mobile-only {
+  display: none;
+}
+
 .ad img {
   width: 100%;
   height: 100%;
@@ -184,6 +188,10 @@
   .ad {
     flex: 0 0 100%;
     scroll-snap-align: start;
+  }
+
+  .ad--mobile-only {
+    display: block;
   }
 
   .ad-nav {
