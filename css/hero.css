@@ -21,7 +21,8 @@
   height: 18px;
 }
 
-.site-header__icon--menu {
+.site-header__icon--menu,
+.site-header__icon--theme {
   cursor: pointer;
 }
 
