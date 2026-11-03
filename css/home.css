@@ -111,6 +111,34 @@
   }
 }
 
+.product-card-sm__image-hexagon.is-active {
+  opacity: 1;
+}
+
+.product-card-sm__nav {
+  display: none;
+}
+
+@media (hover: none) {
+  .product-card-sm__nav {
+    display: block;
+    width: 100%;
+    margin-top: 1px;
+  }
+
+  .product-card-sm__nav-line {
+    display: block;
+    width: 50%;
+    height: 1px;
+    background: var(--color-text);
+    transition: transform 0.25s ease;
+  }
+
+  .product-card-sm__nav-line.is-second {
+    transform: translateX(100%);
+  }
+}
+
 .product-card-sm__info {
   display: flex;
   flex-direction: column;
