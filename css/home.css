@@ -97,6 +97,7 @@
 .product-card-sm__info {
   display: flex;
   flex-direction: column;
+  gap: var(--space-0-333);
   padding: 2px 0;
 }
 
