@@ -26,6 +26,7 @@
   var wordmark = document.getElementById("wordmark");
   var wheel = document.getElementById("wheel");
   var adGridMark = document.getElementById("adGridMark");
+  var footerMark = document.getElementById("footerMark");
 
   function setActive(buttons, activeButton) {
     buttons.forEach(function (button) {
@@ -62,6 +63,9 @@
           }
           if (adGridMark && button.dataset.markAsset) {
             adGridMark.src = button.dataset.markAsset;
+          }
+          if (footerMark && button.dataset.markAsset) {
+            footerMark.src = button.dataset.markAsset;
           }
         }
 
