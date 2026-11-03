@@ -8,6 +8,8 @@ body {
 }
 
 :root {
+  --space-0-333: 2px;
+  --space-0-667: 4px;
   --space-1: 6px;
   --space-2: 12px;
   --space-3: 18px;
