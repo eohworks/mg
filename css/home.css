@@ -123,7 +123,7 @@
   .product-card-sm__nav {
     display: block;
     width: 100%;
-    margin-top: 1px;
+    margin-top: calc(var(--space-1) * -1);
   }
 
   .product-card-sm__nav-line {
