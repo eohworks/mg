@@ -123,15 +123,8 @@
 .product-card-sm__price {
   margin: 0;
   font-weight: 600;
-  line-height: 15px;
-}
-
-.product-card-sm__name {
   font-size: var(--font-size-0);
-}
-
-.product-card-sm__price {
-  font-size: 12px;
+  line-height: 15px;
 }
 
 .footer-mark-wrap {
