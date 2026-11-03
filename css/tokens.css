@@ -8,12 +8,12 @@ body {
 }
 
 :root {
-  --space-6: 6px;
-  --space-12: 12px;
-  --space-18: 18px;
-  --space-24: 24px;
-  --space-30: 30px;
-  --space-36: 36px;
+  --space-1: 6px;
+  --space-2: 12px;
+  --space-3: 18px;
+  --space-4: 24px;
+  --space-5: 30px;
+  --space-6: 36px;
 
   /* Neutral greyscale, 6 steps */
   --grey-0: #000000;
