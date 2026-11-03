@@ -11,10 +11,12 @@
 
     img.addEventListener("mouseenter", function () {
       img.src = hoverSrc;
+      img.classList.add("product-card-sm__image-hexagon");
     });
 
     img.addEventListener("mouseleave", function () {
       img.src = defaultSrc;
+      img.classList.remove("product-card-sm__image-hexagon");
     });
   });
 })();
