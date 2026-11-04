@@ -10,6 +10,10 @@
 
   if (reduceMotion) return;
 
+  function isMonogram() {
+    return wheel.dataset.wheel === "monogram";
+  }
+
   var degreesPerMs = (360 / 8000) * 0.75;
   var velocity = 0;
   var targetVelocity = 0;
@@ -20,10 +24,21 @@
   var pulseDuration = 1000;
 
   function pulse(onComplete) {
+    if (isMonogram()) {
+      wheel.style.transform = "translate(-50%, -50%) rotate(0deg)";
+      if (onComplete) onComplete();
+      return;
+    }
+
     var start = null;
     var last = null;
 
     function step(time) {
+      if (isMonogram()) {
+        wheel.style.transform = "translate(-50%, -50%) rotate(0deg)";
+        return;
+      }
+
       if (start === null) {
         start = time;
         last = time;
@@ -49,6 +64,13 @@
   }
 
   function frame(time) {
+    if (isMonogram()) {
+      wheel.style.transform = "translate(-50%, -50%) rotate(0deg)";
+      lastTime = null;
+      requestAnimationFrame(frame);
+      return;
+    }
+
     if (lastTime === null) lastTime = time;
     var dt = time - lastTime;
     lastTime = time;
@@ -69,7 +91,7 @@
     });
   } else {
     wheel.addEventListener("mouseenter", function () {
-      targetVelocity = degreesPerMs;
+      if (!isMonogram()) targetVelocity = degreesPerMs;
     });
 
     wheel.addEventListener("mouseleave", function () {
