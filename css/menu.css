@@ -70,6 +70,10 @@
   cursor: pointer;
 }
 
+.menu__row[hidden] {
+  display: none;
+}
+
 .menu__row[data-asset] {
   color: var(--color-text);
   cursor: pointer;
