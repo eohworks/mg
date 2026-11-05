@@ -48,6 +48,10 @@
   pointer-events: none;
 }
 
+.ad-grid__mark.is-dark-source {
+  filter: invert(1);
+}
+
 .ad {
   flex: 0 0 calc(100% / 3);
   aspect-ratio: 4 / 5;

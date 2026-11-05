@@ -63,6 +63,7 @@
           }
           if (adGridMark && button.dataset.markAsset) {
             adGridMark.src = button.dataset.markAsset;
+            adGridMark.classList.toggle("is-dark-source", button.dataset.markDark === "true");
           }
           if (footerMark && button.dataset.markAsset) {
             footerMark.src = button.dataset.markAsset;
