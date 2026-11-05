@@ -11,7 +11,7 @@
   if (reduceMotion) return;
 
   function isMonogram() {
-    return wheel.dataset.wheel === "monogram";
+    return wheel.dataset.wheel === "monogram" || wheel.dataset.wheel === "monogram-m";
   }
 
   var degreesPerMs = (360 / 8000) * 0.75;
