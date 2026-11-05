@@ -189,6 +189,15 @@ html[data-theme="dark"] .footer-mark {
   filter: none;
 }
 
+/* dark-source marks (e.g. original-2row.svg) are already black ink; invert logic flips */
+.footer-mark.is-dark-source {
+  filter: none;
+}
+
+html[data-theme="dark"] .footer-mark.is-dark-source {
+  filter: invert(1);
+}
+
 .site-footer {
   margin-top: var(--space-6);
   padding: 0 var(--space-6) var(--space-5);

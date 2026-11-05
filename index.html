@@ -16,7 +16,7 @@
 <body>
   <header class="site-header">
     <img class="site-header__icon site-header__icon--menu" src="assets/edit.svg" alt="Menu">
-    <img class="site-header__logo" id="wordmark" src="assets/classic-v1.svg" alt="" data-wordmark="classic-v1" style="height: 24px;">
+    <img class="site-header__logo" id="wordmark" src="assets/original-1row.svg" alt="" data-wordmark="original">
     <img class="site-header__icon site-header__icon--theme" id="themeToggle" src="assets/asleep.svg" alt="Switch to dark mode">
   </header>
   <section class="hero">
@@ -33,6 +33,7 @@
         <p class="menu__heading">WORDMARK</p>
         <div class="menu__group">
           <p class="menu__group-label">GOTHIC</p>
+          <button class="menu__row menu__row--active" type="button" data-wordmark-option="original" data-asset="assets/original-1row.svg" data-mark-asset="assets/original-2row.svg" data-mark-dark="true">Original<img class="menu__row-view" src="assets/view-icon.svg" alt=""></button>
           <button class="menu__row" type="button" data-wordmark-option="gothic-v1" data-asset="assets/logo.svg" data-mark-asset="assets/gothic-v1-2row.svg">v. 1</button>
           <button class="menu__row" type="button" data-wordmark-option="gothic-v2" data-asset="assets/gothic-v2.svg" data-height="36" data-mark-asset="assets/gothic-v2-2row.svg">v. 2</button>
         </div>
@@ -43,7 +44,7 @@
         </div>
         <div class="menu__group">
           <p class="menu__group-label">CLASSIC</p>
-          <button class="menu__row menu__row--active" type="button" data-wordmark-option="classic-v1" data-asset="assets/classic-v1.svg" data-height="24" data-mark-asset="assets/classic-v1-2row.svg">v. 1<img class="menu__row-view" src="assets/view-icon.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="classic-v1" data-asset="assets/classic-v1.svg" data-height="24" data-mark-asset="assets/classic-v1-2row.svg">v. 1</button>
           <button class="menu__row" type="button" data-wordmark-option="classic-v2" data-asset="assets/classic-v2.svg" data-height="24" data-mark-asset="assets/classic-v2-2row.svg">v. 2</button>
           <button class="menu__row" type="button" data-wordmark-option="classic-v1-alt" data-asset="assets/classic-v2-alt.svg" data-height="24" data-mark-asset="assets/classic-v1-alt-2row.svg">v. 1 alt.</button>
         </div>
@@ -76,7 +77,7 @@
       <article class="ad"><img src="assets/ad-6.jpeg" alt=""></article>
       <div class="ad-spacer" aria-hidden="true"></div>
     </section>
-    <img class="ad-grid__mark" id="adGridMark" src="assets/classic-v1-2row.svg" alt="">
+    <img class="ad-grid__mark" id="adGridMark" src="assets/original-2row.svg" alt="">
   </div>
   <div class="ad-nav" id="adNav">
     <button class="ad-nav__dot" type="button" aria-label="Go to ad 1"></button>
@@ -161,7 +162,7 @@
   </section>
 
   <div class="footer-mark-wrap">
-    <img class="footer-mark" id="footerMark" src="assets/classic-v1-2row.svg" alt="">
+    <img class="footer-mark is-dark-source" id="footerMark" src="assets/original-2row.svg" alt="">
   </div>
 
   <footer class="site-footer">

@@ -66,6 +66,7 @@
           }
           if (footerMark && button.dataset.markAsset) {
             footerMark.src = button.dataset.markAsset;
+            footerMark.classList.toggle("is-dark-source", button.dataset.markDark === "true");
           }
         }
 
