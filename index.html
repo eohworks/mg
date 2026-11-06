@@ -16,7 +16,7 @@
 <body>
   <header class="site-header">
     <img class="site-header__icon site-header__icon--menu" src="assets/edit.svg" alt="Menu">
-    <img class="site-header__logo" id="wordmark" src="assets/geometric-bold.svg" alt="" data-wordmark="geometric-bold">
+    <img class="site-header__logo" id="wordmark" src="assets/original-1row.svg" alt="" data-wordmark="original">
     <img class="site-header__icon site-header__icon--theme" id="themeToggle" src="assets/asleep.svg" alt="Switch to dark mode">
   </header>
   <section class="hero">
@@ -39,10 +39,10 @@
         </div>
         <div class="menu__group">
           <p class="menu__group-label">GOTHIC</p>
-          <button class="menu__row" type="button" data-wordmark-option="original" data-asset="assets/original-1row.svg" data-mark-asset="assets/original-2row.svg" data-mark-dark="true">Original</button>
+          <button class="menu__row menu__row--active" type="button" data-wordmark-option="original" data-asset="assets/original-1row.svg" data-mark-asset="assets/original-2row.svg" data-mark-dark="true">Original<img class="menu__row-view" src="assets/view-icon.svg" alt=""></button>
           <button class="menu__row" type="button" data-wordmark-option="original-mono" data-asset="assets/original-mono-1row.svg" data-mark-asset="assets/original-mono-2row.svg">Original Mono</button>
           <button class="menu__row" type="button" data-wordmark-option="geometric" data-asset="assets/geometric-1row.svg" data-mark-asset="assets/geometric-2row.svg">Geometric</button>
-          <button class="menu__row menu__row--active" type="button" data-wordmark-option="geometric-bold" data-asset="assets/geometric-bold.svg" data-mark-asset="assets/geometric-bold-2row.svg">Geometric Bold<img class="menu__row-view" src="assets/view-icon.svg" alt=""></button>
+          <button class="menu__row" type="button" data-wordmark-option="geometric-bold" data-asset="assets/geometric-bold.svg" data-mark-asset="assets/geometric-bold-2row.svg">Geometric Bold</button>
         </div>
         <div class="menu__group">
           <p class="menu__group-label">CLASSIC</p>
@@ -80,7 +80,7 @@
       <article class="ad"><img src="assets/ad-6.jpeg" alt=""></article>
       <div class="ad-spacer" aria-hidden="true"></div>
     </section>
-    <img class="ad-grid__mark" id="adGridMark" src="assets/geometric-bold-2row.svg" alt="">
+    <img class="ad-grid__mark is-dark-source" id="adGridMark" src="assets/original-2row.svg" alt="">
   </div>
   <div class="ad-nav" id="adNav">
     <button class="ad-nav__dot" type="button" aria-label="Go to ad 1"></button>
@@ -165,7 +165,7 @@
   </section>
 
   <div class="footer-mark-wrap">
-    <img class="footer-mark" id="footerMark" src="assets/geometric-bold-2row.svg" alt="">
+    <img class="footer-mark is-dark-source" id="footerMark" src="assets/original-2row.svg" alt="">
   </div>
 
   <footer class="site-footer">
