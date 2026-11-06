@@ -25,8 +25,24 @@
 
   var wordmark = document.getElementById("wordmark");
   var wheel = document.getElementById("wheel");
+  var wheelGlass = document.getElementById("wheelGlass");
   var adGridMark = document.getElementById("adGridMark");
   var footerMark = document.getElementById("footerMark");
+
+  function isGlassOption(optionName) {
+    return optionName === "monogram" || optionName === "monogram-m";
+  }
+
+  function updateWheelGlass(button) {
+    if (!wheelGlass) return;
+    var glass = isGlassOption(button.dataset.wheelOption);
+    wheel.classList.toggle("is-glass-active", glass);
+    wheelGlass.classList.toggle("is-glass-active", glass);
+    if (glass) {
+      wheelGlass.style.maskImage = "url(" + button.dataset.asset + ")";
+      wheelGlass.style.webkitMaskImage = "url(" + button.dataset.asset + ")";
+    }
+  }
 
   function setActive(buttons, activeButton) {
     buttons.forEach(function (button) {
@@ -47,7 +63,7 @@
     });
   }
 
-  function wire(selector, targetImg, datasetKey, fade) {
+  function wire(selector, targetImg, datasetKey, fade, onApply) {
     var buttons = Array.prototype.slice.call(menu.querySelectorAll(selector));
     buttons.forEach(function (button) {
       button.addEventListener("click", function () {
@@ -85,13 +101,15 @@
           applyChange();
         }
 
+        if (onApply) onApply(button);
+
         setActive(buttons, button);
       });
     });
   }
 
   wire("[data-wordmark-option]", wordmark, "wordmark", true);
-  wire("[data-wheel-option]", wheel, "wheel", false);
+  wire("[data-wheel-option]", wheel, "wheel", false, updateWheelGlass);
 
   var hexagonToggle = document.getElementById("hexagonToggle");
   var hexagonToggleIcon = document.getElementById("hexagonToggleIcon");

@@ -2,10 +2,13 @@
   var wheel = document.querySelector(".hero__wheel");
   if (!wheel) return;
 
+  var wheelGlass = document.getElementById("wheelGlass");
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   requestAnimationFrame(function () {
     wheel.classList.add("is-visible");
+    if (wheelGlass) wheelGlass.classList.add("is-visible");
   });
 
   if (reduceMotion) return;
