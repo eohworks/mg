@@ -17,7 +17,7 @@
     return wheel.dataset.wheel === "monogram" || wheel.dataset.wheel === "monogram-m";
   }
 
-  var degreesPerMs = (360 / 10000) * 0.75;
+  var degreesPerMs = (360 / 8000) * 0.75;
   var velocity = 0;
   var targetVelocity = 0;
   var angle = 0;
